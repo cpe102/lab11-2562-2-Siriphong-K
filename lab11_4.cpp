@@ -2,10 +2,13 @@
 #include<string>
 
 using namespace std;
-
 //Declare prototype of function template mySwap() here
-
-
+                                  //Overload
+/*void mySwap (string &,string &);
+void mySwap (int &,int &);
+void mySwap (char &,char &);*/
+template <typename T>
+T mySwap(T &,T &);
 int main(){
 	
 	int x = 6, y = 9;
@@ -33,7 +36,30 @@ int main(){
 
 	return 0;
 }
-
-
+template <typename T>
+T mySwap (T &x,T &y){
+	T c=x;
+	x=y;
+	y=c;
+	return x,y;
+}
 //Write definition of function template mySwap() here
-
+                                    //Overload
+/*void mySwap (int &x,int &y){
+	int c=x;
+	x=y;
+	y=c;
+	
+}
+void mySwap (string &x,string &y){
+	string c=x;
+	x=y;
+	y=c;
+	
+}
+void mySwap (char &x,char &y){
+	char c=x;
+	x=y;
+	y=c;
+	
+}*/
